@@ -1,0 +1,147 @@
+:root {
+  --main-blu: #1e2d69;
+  --dark-blu: #0c122c;
+  --whiteish: #dbd9ff;
+  --white: #fff;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0px;
+  margin: 0px;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  font-family: "Raleway", sans-serif;
+  background-color: var(--dark-blu);
+  background-image: url("./images/bg-desktop.png");
+  background-size: contain;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* Conteneur principale */
+main {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+/* Partie de Gauche*/
+#left {
+  width: 326px;
+  height: 200px;
+  border-radius: 10px 100px 10px 10px;
+  background-color: var(--main-blu);
+  padding-left: 40px;
+}
+.logo {
+  margin-top: 40px;
+}
+#boxes {
+  display: flex;
+  justify-content: space-between;
+  width: 175px;
+  margin-top: 30px;
+}
+
+.box {
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
+  background-color: var(--dark-blu);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* Partie de droite*/
+#right {
+  width: 540px;
+  height: 150px;
+  margin-left: 30px;
+  margin-top: 25px;
+  position: relative;
+  padding: 0 40px;
+  border-radius: 10px;
+  background-color: var(--main-blu);
+}
+#right::after{
+  content: "185 GB left";
+
+
+}
+
+.sentence {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--whiteish);
+  margin: 2em 0 1em 0;
+}
+
+.sentence span {
+  font-weight: 700;
+}
+
+
+#file {
+  width: 459px;
+  height: 15px;
+  overflow: hidden;
+  background-color: var(--dark-blu);
+  border-radius: 15px;
+}
+#value{
+  background: linear-gradient(to right,hsl(6, 100%, 80%), hsl(335, 100%, 65%));
+  width: 85%;
+  height: 100%;
+  border-radius: 15px;
+  position: relative;
+}
+#value::after{
+  content: "";
+  width: 10px;
+  height: 10px;
+  background-color: var(--white);
+  border-radius: 50%;
+  position: absolute;
+  top: 4px;
+  right: 4px;
+}
+
+.gigs {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--whiteish);
+  display: flex;
+  justify-content: space-between;
+  width: 459px;
+  margin-top: 10px;
+}
+
+@media only screen and (max-width: 768px) {
+  body{
+      background: none;
+      background-color: #0c122c;
+  }
+  main{
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  #right{
+    margin-left: 0;
+    width: unset;
+    height: unset;
+  }
+  #left{
+    width: 100%;
+  }
+  #file{
+    width: 80vw;
+  }
+  .gigs{
+    width: 100%;
+  }
+}
